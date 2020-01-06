@@ -6,24 +6,12 @@ public class Solution {
         ListNode next = new ListNode(0);
         head.next = next;
         while (true) {
-            int val1 = 0;
-            if (l1 != null) {
-                val1 = l1.val;
-            }
-            int val2 = 0;
-            if (l2 != null) {
-                val2 = l2.val;
-            }
+            int val1 = l1 == null ? 0 : l1.val;
+            int val2 = l2 == null ? 0 : l2.val;
+            int sum = val1 + val2 + next.val;
             ListNode node;
-            if ((val1 + val2 + next.val) / 10 >= 1) {
-                node = new ListNode(1);
-            } else {
-                node = new ListNode(0);
-            }
-
-            next.val = (val1 + val2 + next.val) % 10;
-
-
+            node = new ListNode(sum / 10);
+            next.val = (sum) % 10;
             if (l1 != null) {
                 l1 = l1.next;
             }
