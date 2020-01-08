@@ -24,13 +24,9 @@ public class Solution {
     }
 
     public boolean isPalindromic(String sub) {
-        if (sub == null || sub.length() == 0) {
-            return false;
-        }
-        int begin = 0;
-        int end = sub.length() - 1;
-        while (begin <= end) {
-            if (sub.charAt(begin++) != sub.charAt(end--)) {
+        int len=sub.length();
+        for (int i = 0; i < len/2; i++) {
+            if (sub.charAt(i)!=sub.charAt(len-i-1)){
                 return false;
             }
         }
