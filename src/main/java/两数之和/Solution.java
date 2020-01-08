@@ -9,7 +9,7 @@ public class Solution {
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
         }
-        for (int i = 0; i < nums.length ; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement)) {
                 result[0] = i;
@@ -17,6 +17,7 @@ public class Solution {
                 if (result[0] == result[1]) {
                     continue;
                 }
+
                 return result;
             }
         }
