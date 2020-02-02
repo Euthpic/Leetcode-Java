@@ -3,7 +3,7 @@ package 最长回文子串;
 /**
  * 暴力法
  */
-public class Solution {
+public class Solution1 {
     public String longestPalindrome(String s) {
         if (s == null || s.length() == 0 || s.length() == 1) {
             return s;
@@ -34,7 +34,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-       Solution solution=new Solution();
+       Solution1 solution=new Solution1();
         System.out.println(solution.longestPalindrome(""));
 
     }
