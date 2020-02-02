@@ -6,7 +6,7 @@ public class Solution2 {
         int length = s.length();
         boolean[][] P = new boolean[length][length];
         String maxStr = "";
-        int maxLen=0;
+        int maxLen = 0;
         //外层遍历数组长度
         for (int len = 1; len <= length; len++) {
             //内层遍历字符串的开头
@@ -18,9 +18,9 @@ public class Solution2 {
                 }
                 P[start][end] = (len == 1 || len == 2 || P[start + 1][end - 1])
                         && s.charAt(start) == s.charAt(end);
-                if (P[start][end]&&len>maxLen){
-                    maxStr=s.substring(start,end+1);
-                    maxLen=len;
+                if (P[start][end] && len > maxLen) {
+                    maxStr = s.substring(start, end + 1);
+                    maxLen = len;
                 }
             }
         }
