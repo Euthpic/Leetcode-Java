@@ -1,36 +1,35 @@
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
-    public String gcdOfStrings(String str1, String str2) {
-        String result = "";
-        int len = Math.min(str1.length(), str2.length());
-            for (int i = 0; i < len; i++) {
-                if (str1.charAt(i) != str2.charAt(i)) {
-                    break;
+    public int majorityElement(int[] nums) {
+        Map<Integer,Integer> map=new HashMap<>();
+        int target=nums.length/2+1;
+        for (int i = 0; i <nums.length ; i++) {
+            int num=nums[i];
+            if (!map.containsKey(num)){
+                map.put(num,1);
+            }else {
+                map.put(num,map.get(num)+1);
+                if (map.get(num)>=target){
+                    return num;
                 }
-                String divisor = str1.substring(0, i + 1);
-                if (isDivisible(str1, divisor) && isDivisible(str2, divisor)) {
-                result = divisor;
             }
         }
-        return result;
-    }
-
-    boolean isDivisible(String str2, String str1) {
-        if (str2.length() % str1.length() != 0) {
-            return false;
+        int maxCount=0;
+        int maxNum=0;
+        for (Map.Entry<Integer, Integer> integerIntegerEntry : map.entrySet()) {
+            if (integerIntegerEntry.getValue()>maxCount){
+                maxCount=integerIntegerEntry.getValue();
+                maxNum=integerIntegerEntry.getKey();
+            }
         }
-        int count = str2.length() / str1.length();
-        StringBuilder tmp = new StringBuilder();
-        for (int i = 0; i < count; i++) {
-            tmp.append(str1);
-        }
-        return tmp.toString().equals(str2);
+        return maxNum;
     }
 
     public static void main(String[] args) {
+        int[] nums={3,3,4};
         Solution solution=new Solution();
-        String str1="ABCABC";
-        String str2="ABC";
-        System.out.println(solution.gcdOfStrings(str1,str2));
+        System.out.println(solution.majorityElement(nums));
     }
 }
