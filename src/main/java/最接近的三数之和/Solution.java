@@ -7,14 +7,7 @@ import java.util.List;
 public class Solution {
 
     public int threeSumClosest(int[] nums, int target) {
-        if (nums.length <= 3) {
-            int result = 0;
-            for (int i = 0; i < nums.length; i++) {
-                result += nums[i];
-            }
-            return result;
-        }
-        int result = 9999;
+        int result = nums[0] + nums[1] + nums[2]-target;
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++) {
             if (i > 0) {
@@ -27,7 +20,6 @@ public class Solution {
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right] - target;
                 result = Math.abs(result) < Math.abs(sum) ? result : sum;
-
                 if (sum < 0) {
                     left++;
                 }
