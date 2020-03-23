@@ -1,7 +1,5 @@
 package 删除链表的倒数第N个节点;
 
-import java.util.List;
-
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (n == 0 || head == null) {
