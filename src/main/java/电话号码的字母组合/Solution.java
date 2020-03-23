@@ -6,48 +6,40 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
-    Map<Character, String> map = new HashMap<>();
+    Map<String, String> phone = new HashMap<>() {
+        {
+            put("2", "abc");
+            put("3", "def");
+            put("4", "ghi");
+            put("5", "jkl");
+            put("6", "mno");
+            put("7", "pqrs");
+            put("8", "tuv");
+            put("9", "wxyz");
+        }
+    };
+    ArrayList<String> output = new ArrayList<>();
 
-    {
-        map.put('2', "abc");
-        map.put('3', "def");
-        map.put('4', "ghi");
-        map.put('5', "jkl");
-        map.put('6', "mno");
-        map.put('7', "pqrs");
-        map.put('8', "tuv");
-        map.put('9', "wxyz");
+    public void backtrack(String combination, String nextDigit) {
+        if (nextDigit.length() == 0) {
+            output.add(combination);
+        } else {
+            String num = nextDigit.substring(0, 1);
+            String letters = phone.get(num);
+            for (int i = 0; i < letters.length(); i++) {
+                String letter = letters.substring(i, i + 1);
+                backtrack(combination + letter, nextDigit.substring(1));
+            }
+        }
     }
 
     public List<String> letterCombinations(String digits) {
-        if (digits.length() <= 0) {
-            return new ArrayList<>();
+        if (digits.length() != 0) {
+            backtrack("", digits);
         }
-        char[] chars = digits.toCharArray();
-        List<String> result = combine(null, chars[0]);
-        for (int i = 1; i < chars.length; i++) {
-            result = combine(result, chars[i]);
-        }
-        return result;
+        return output;
     }
 
-    private List<String> combine(List<String> former, char number) {
-        List<String> result = new ArrayList<>();
-        String str = map.get(number);
-        char[] chars = str.toCharArray();
-        if (former == null) {
-            for (char c : chars) {
-                result.add(String.valueOf(c));
-            }
-        } else {
-            for (String s : former) {
-                for (char c : chars) {
-                    result.add(s + c);
-                }
-            }
-        }
-        return result;
-    }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
