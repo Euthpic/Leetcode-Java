@@ -16,9 +16,8 @@ public class Solution {
             ListNode start = pre.next;
             ListNode next = end.next;
             end.next = null;
-            reverse(start);
-            pre.next=end;
-            start.next=next;
+            pre.next = reverse(start);
+            start.next = next;
             pre = start;
             end = pre;
         }
