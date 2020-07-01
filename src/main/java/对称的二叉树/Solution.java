@@ -18,7 +18,7 @@ public class Solution {
         return dfs(a.left, b.right) && dfs(a.right, b.left);
     }
 
-    public class TreeNode {
+    private class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
