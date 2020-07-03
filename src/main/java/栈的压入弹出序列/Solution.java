@@ -11,24 +11,15 @@ public class Solution {
         }
         Deque<Integer> queue = new LinkedList<>();
         int i = 0;
-        int j = 0;
-        while (i <= pushed.length-1 && j <= popped.length-1) {
-            if (pushed[i] == popped[j]) {
-                i++;
-                j++;
-            } else if (!queue.isEmpty() && queue.peek().equals(popped[j])) {
+        for (int num : pushed) {
+            queue.push(num);
+            while (!queue.isEmpty() && queue.peek().equals(popped[i])) {
                 queue.pop();
-                j++;
-            } else {
-                queue.push(pushed[i++]);
+                i++;
             }
+
         }
-        while (!queue.isEmpty()&&j<=popped.length-1){
-            if (!queue.pop().equals(popped[j++])){
-                return false;
-            }
-        }
-        return true;
+        return queue.isEmpty();
     }
 }
 
