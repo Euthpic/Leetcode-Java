@@ -1,4 +1,4 @@
-package 最大子数和;
+package 最大子数组和;
 
 //分治
 public class Solution {
