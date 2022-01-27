@@ -1,6 +1,6 @@
 package 最小路径和;
 
-//动态规划
+//动态规划 转移方程  dp[i][j]=grid[i][j]+Math.min(dp[i-1][j],dp[i][j-1]);
 public class Solution {
 
     public int minPathSum(int[][] grid) {
