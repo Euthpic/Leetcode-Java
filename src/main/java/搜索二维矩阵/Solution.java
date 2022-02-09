@@ -10,6 +10,9 @@ package 搜索二维矩阵;
  * 中点的计算也值得注意,偶数数组的中点有两个,普通的二分随便取哪个都行
  * 但是在这个二分中,left收敛后等于mid,如果mid = (left + right) / 2,也就是取左边的中点,当left和right是相邻的两行,那么mid又会等于left,
  * 这样就会循环赋值,陷于死循环,所以mid = (left + right +1 ) / 2,要取右边的中点,继续循环的条件也只能是left<right,当left==right时跳出循环
+ *
+ * left+right可能会溢出,所以这样处理会好些mid = (right - left+1) / 2 +left
+ * 如果第一次二分取的是最后一列,那么无法处理每一行元素个数不一的情况
  */
 public class Solution {
 
