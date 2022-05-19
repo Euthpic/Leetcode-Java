@@ -1,4 +1,4 @@
-package 矩阵中的路径;
+package 剑指offer.矩阵中的路径;
 
 public class Solution {
 
