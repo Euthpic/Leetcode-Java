@@ -1,4 +1,4 @@
-package 剪绳子I;
+package 剑指offer.剪绳子I;
 
 public class Solution {
     public int cuttingRope(int n) {
