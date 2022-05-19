@@ -1,4 +1,4 @@
-package 旋转数组的最小数字;
+package 剑指offer.旋转数组的最小数字;
 
 public class Solution {
     public int minArray(int[] numbers) {

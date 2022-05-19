@@ -1,4 +1,4 @@
-package 青蛙跳台阶;
+package 剑指offer.青蛙跳台阶;
 
 public class Solution {
     public int numWays(int n) {
