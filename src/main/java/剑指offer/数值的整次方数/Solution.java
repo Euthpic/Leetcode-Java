@@ -1,4 +1,4 @@
-package 数值的整次方数;
+package 剑指offer.数值的整次方数;
 
 public class Solution {
     public double myPow(double x, int n) {

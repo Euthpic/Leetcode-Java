@@ -1,4 +1,4 @@
-package 二进制中1的个数;
+package 剑指offer.二进制中1的个数;
 
 public class Solution {
     public int hammingWeight(int n) {
