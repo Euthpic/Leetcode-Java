@@ -30,6 +30,7 @@ public class Solution3 {
     private int partition(int[] nums, int left, int right) {
         int randomIndex = RANDOM.nextInt(right - left + 1) + left;
         int pivot = nums[randomIndex];
+        //lt是最后一个小于pivot的元素的下标
         int lt = left;
         swap(nums, randomIndex, lt);
         for (int i = left + 1; i <= right; i++) {
