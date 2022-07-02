@@ -1,6 +1,7 @@
 package 排序数组;
 
 //选择排序
+//遍历N趟,每趟把第N小的元素挪到第N个位置.
 public class Solution {
 
     public int[] sortArray(int[] nums) {
