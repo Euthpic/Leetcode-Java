@@ -35,6 +35,7 @@ public class Solution {
                 currentMap.put(s.charAt(r), currentMap.getOrDefault(s.charAt(r),0) + 1);
             }
             while (check() && l <= r) {
+                //这里唠叨一下,距离=右端点r-左端点l,长度=距离+1,记住这个就不会在边界上犯浑了
                 if (r - l + 1 < targetLen) {
                     //如果当前滑动窗口的长度小于原先最小区间的长度,则更新最小区间的长度
                     targetL = l;
