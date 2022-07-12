@@ -4,6 +4,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * 我们可以用滑动窗口的思想解决这个问题。
+ * 在滑动窗口类型的问题中都会有两个指针，一个用于「延伸」现有窗口的 r 指针，和一个用于「收缩」窗口的 l 指针。
+ * 在任意时刻，只有一个指针运动，而另一个保持静止。
+ * 我们在 s 上滑动窗口，通过移动 r 指针不断扩张窗口。
+ * 当窗口包含 t 全部所需的字符后，如果能收缩，我们就收缩窗口直到得到最小窗口。
+ * 收缩的条件是当前窗口仍能覆盖目前子串,且l指针不超过r指针
+ *
+ */
 public class Solution {
     Map<Character, Integer> targetMap = new HashMap<>();
     Map<Character, Integer> currentMap = new HashMap<>();
