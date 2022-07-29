@@ -1,5 +1,5 @@
 package 对称的二叉树;
-
+//递归
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
