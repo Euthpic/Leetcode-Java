@@ -1,5 +1,6 @@
 package 二叉树的最大深度;
 
+//递归
 public class Solution {
     public int maxDepth(TreeNode root) {
         if(root==null){
