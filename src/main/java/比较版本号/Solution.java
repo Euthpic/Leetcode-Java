@@ -4,32 +4,22 @@ public class Solution {
     public int compareVersion(String version1, String version2) {
         String[] arr1 = version1.split("\\.");
         String[] arr2 = version2.split("\\.");
-        int len1 = arr1.length;
-        int len2 = arr2.length;
-        int maxLen = Math.max(len1, len2);
-        int cur = 0;
-        while (cur < maxLen) {
-            if (cur > len1 - 1) {
-                int num = Integer.parseInt(arr2[cur]);
-                if (num != 0) {
-                    return -1;
-                }
-
-            } else if (cur > len2 - 1) {
-                int num = Integer.parseInt(arr1[cur]);
-                if (num != 0) {
-                    return 1;
-                }
-            } else {
-                int num1 = Integer.parseInt(arr1[cur]);
-                int num2 = Integer.parseInt(arr2[cur]);
-                if (num1 > num2) {
-                    return 1;
-                } else if (num2 > num1) {
-                    return -1;
-                }
+        int n = arr1.length;
+        int m = arr2.length;
+        int i = 0;
+        int j = 0;
+        while (i < n || j < m) {
+            int a = 0;
+            int b = 0;
+            if (i < n) {
+                a = Integer.parseInt(arr1[i++]);
             }
-            cur++;
+            if (j < m) {
+                b = Integer.parseInt(arr2[j++]);
+            }
+            if (a != b) {
+                return a > b ? 1 : -1;
+            }
         }
         return 0;
     }
